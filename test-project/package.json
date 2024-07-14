@@ -1,0 +1,17 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "main": "src/test.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "description": "",
+  "dependencies": {
+    "@hiconic-os/hello-world-lib": "1.0.0",
+    "@hiconic-os/hello-world-lib2": "1.0.0"
+  }
+}

@@ -1,0 +1,47 @@
+name: Publish Package
+
+on:
+  workflow_dispatch: 
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_REPO_NAME: ${{ github.event.repository.name }}
+      GIT_REPO_DIR: ${{ github.workspace }}/git-repo
+
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
+
+    defaults:
+      run:
+        working-directory: "${{ env.GIT_REPO_DIR }}/hello-world-lib2"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          path: "git-repo"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '21' # Specify the Node.js version you want to use
+          registry-url: 'https://npm.pkg.github.com/'
+
+#      - name: Authenticate to GitHub Packages
+#        run: |
+#          pwd
+#          # this isn't enough
+#          echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > ~/.npmrc
+#          echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > .npmrc
+
+#      - name: Install dependencies
+#        run: npm install
+
+      - name: Publish to GitHub Packages
+        run: |
+          pwd
+          npm publish --access public
