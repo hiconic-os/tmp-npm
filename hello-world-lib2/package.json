@@ -4,14 +4,10 @@
   "description": "A simple hello world library",
   "main": "src/hello-world.js",
   "types": "src/hello-world.d.ts",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "hello",
-    "world"
+  "files": [
+    "src/**/*"
   ],
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hiconic-os/tribefire.js.git"

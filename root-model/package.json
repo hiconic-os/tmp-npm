@@ -1,0 +1,26 @@
+{
+  "name": "@hiconic-os/com.braintribe.gm--root-model",
+  "version": "1.0.0",
+  "main": "src/root-model.js",
+  "types": "src/root-model.d.ts",
+  "files": [
+    "src/**/*"
+  ],
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiconic-os/tribefire.js.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  },
+  "dependencies": {
+    "@hiconic-os/com.braintribe.gm--gm-core-api": "2.0.x"
+  },
+  "author": "dev.hiconic",
+  "license": "Apache-2.0"
+}

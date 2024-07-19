@@ -6,6 +6,7 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    container: ghcr.io/hiconic-os/ci-hiconic-sdk/main:latest
 
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

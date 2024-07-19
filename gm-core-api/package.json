@@ -1,0 +1,23 @@
+{
+  "name": "@hiconic-os/com.braintribe.gm--gm-core-api",
+  "version": "1.0.0",
+  "main": "src/gm-core-api.js",
+  "types": "src/gm-core-api.d.ts",
+  "files": [
+    "src/**/*"
+  ],
+  "type": "module",
+  "keywords": [
+    "hiconic"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiconic-os/tribefire.js.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  },
+  "author": "dev.hiconic",
+  "license": "Apache-2.0"
+}

@@ -4,6 +4,7 @@
   "main": "src/test.js",
   "type": "module",
   "scripts": {
+    "start": "http-server . -p 8080 -c-1",    
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,7 +12,9 @@
   "license": "Apache-2.0",
   "description": "",
   "dependencies": {
-    "@hiconic-os/hello-world-lib": "1.0.0",
-    "@hiconic-os/hello-world-lib2": "1.0.0"
+    "@hiconic-os/hello-world-lib": "1.0.x",
+    "@hiconic-os/hello-world-lib2": "1.0.x",
+
+    "@hiconic-os/tribefire.js--tf-js": "3.0.x"
   }
 }

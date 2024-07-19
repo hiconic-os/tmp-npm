@@ -1,0 +1,22 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "main": "src/test.js",
+  "type": "module",
+  "scripts": {
+    "start": "http-server . -p 8080 -c-1",    
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "description": "",
+  "dependencies": {
+    "@hiconic-os/hello-world-lib": "1.0.x",
+    "@hiconic-os/hello-world-lib2": "1.0.x",
+
+    "@hiconic-os/com.braintribe.gm--gm-core-api": "file:../gm-core-api",
+    "@hiconic-os/com.braintribe.gm--root-model": "file:../root-model",
+    "@hiconic-os/tribefire.js--hc-js": "file:../hc-js"
+  }
+}

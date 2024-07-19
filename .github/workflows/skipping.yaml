@@ -1,0 +1,45 @@
+name: Skipping
+
+on:
+  workflow_dispatch: 
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_REPO_NAME: ${{ github.event.repository.name }}
+      GIT_REPO_DIR: ${{ github.workspace }}/git-repo
+
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
+
+    defaults:
+      run:
+        working-directory: "${{ env.GIT_REPO_DIR }}/hello-world-lib2"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          path: "git-repo"
+
+      - name: Set Outputs
+        id: set-outputs
+        run: |
+          var1=$(echo "true")
+          var2=$(echo "false")
+
+          echo "flag1=$var1" >> $GITHUB_OUTPUT
+          echo "flag2=$var2" >> $GITHUB_OUTPUT
+
+      - name: Step 1
+        if: steps.set-outputs.outputs.flag1 == 'true'
+        run: |
+          echo "Step 1 Running"
+
+      - name: Step 2
+        if: steps.set-outputs.outputs.flag2 == 'true'
+        run: |
+          echo "Step 2 Running"

@@ -1,0 +1,29 @@
+{
+  "name": "@hiconic-os/tribefrire.js--hc-js",
+  "version": "1.0.0",
+  "main": "src/hc-js.js",
+  "files": [
+    "src/**/*"
+  ],
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hello",
+    "world"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiconic-os/tribefire.js.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  },
+  "dependencies": {
+    "@hiconic-os/com.braintribe.gm--gm-core-api": "file:../gm-core-api"
+  },
+  "author": "dev.hiconic",
+  "license": "Apache-2.0"
+}
