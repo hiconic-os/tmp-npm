@@ -4,7 +4,8 @@
   "main": "src/test.js",
   "type": "module",
   "scripts": {
-    "start": "http-server . -p 8080 -c-1",    
+    "bundle": "npx webpack --mode production",
+    "start": "http-server . -p 8080 -c-1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,7 +15,17 @@
   "dependencies": {
     "@hiconic-os/hello-world-lib": "1.0.x",
     "@hiconic-os/hello-world-lib2": "1.0.x",
-
-    "@hiconic-os/tribefire.js--tf-js": "3.0.x"
+    "@hiconic-os/tribefire.js--tf-js": "3.0.x",
+    "@hiconic-os/tribefire.js--tf-js-dev": "3.0.x",
+    "@dev.hiconic/hello-world-npmjs-lib": "1.0.x",
+    "@dev.hiconic/hello-world-npmjs-lib2": "1.0.x",
+    "@dev.hiconic/gm_gm-core-api": "2.0.x"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.25.3",
+    "babel-loader": "^9.1.3",
+    "typescript": "^5.5.4",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4"
   }
 }

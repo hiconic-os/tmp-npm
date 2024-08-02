@@ -1,0 +1,39 @@
+name: Publish Package to NPMJS
+
+on:
+  workflow_dispatch: 
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    container: ghcr.io/hiconic-os/ci-hiconic-sdk/main:latest
+
+    env:
+      # GITHUB_REPO_NAME: ${{ github.event.repository.name }}
+      GIT_REPO_DIR: ${{ github.workspace }}/git-repo
+
+    defaults:
+      run:
+        working-directory: "${{ env.GIT_REPO_DIR }}/hello-world-npmjs-lib2"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          path: "git-repo"
+#      DOCS:  https://github.com/actions/setup-node/tree/v4?tab=readme-ov-file
+#      DOCS:  https://github.com/actions/setup-node/blob/v4/docs/advanced-usage.md#publish-to-npmjs-and-gpr-with-npm
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.8.0' # Specify the Node.js version you want to use
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Publish to npmjs
+        run: |
+          pwd
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_TOKEN }}      
+
