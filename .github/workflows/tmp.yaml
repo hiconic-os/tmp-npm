@@ -1,0 +1,40 @@
+name: Tmp
+
+on:
+  workflow_dispatch: 
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_REPO_NAME: ${{ github.event.repository.name }}
+      GIT_REPO_DIR: ${{ github.workspace }}/git-repo
+
+      NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
+
+    defaults:
+      run:
+        working-directory: "${{ env.GIT_REPO_DIR }}/hello-world-lib2"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          path: "git-repo"
+
+      - name: See what there is
+        run: |
+          echo "git user name:"
+          git config -l
+
+          echo ""
+          echo "git remote -v"
+          git remote -v
+
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"

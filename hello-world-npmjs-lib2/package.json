@@ -1,0 +1,24 @@
+{
+  "name": "@dev.hiconic/hello-world-npmjs-lib2",
+  "version": "1.0.1",
+  "description": "A simple hello world library published in npmjs.com",
+  "main": "src/hello-world.js",
+  "types": "src/hello-world.d.ts",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hello",
+    "world"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiconic-os/tribefire.js.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "dev.hiconic",
+  "license": "Apache-2.0"
+}

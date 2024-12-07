@@ -1,20 +1,30 @@
 {
   "name": "test-project",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "main": "src/test.js",
   "type": "module",
   "scripts": {
-    "start": "http-server . -p 8080 -c-1",    
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "http-server . -p 8080 -c-1",
+    "postinstall": "echo 'postinstall'",
+    "test": "vitest",
+    "test-old": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "Apache-2.0",
   "description": "",
   "dependencies": {
-    "@hiconic-os/hello-world-lib": "1.0.x",
-    "@hiconic-os/hello-world-lib2": "1.0.x",
-
-    "@hiconic-os/tribefire.js--tf-js": "3.0.x"
+    "@dev.hiconic/hello-world-npmjs-lib": "1.0.x",
+    "@dev.hiconic/hello-world-npmjs-lib2": "1.0.x",
+    "@dev.hiconic/tf.js_hc-js-api": "3.0.x",
+    "@dev.hiconic/gm_test-model": "2.0.x",
+    "@dev.hiconic/runtime": "file:./hc-rt"
+  },
+  "dependenciesOrig": {
+    "@dev.hiconic/runtime": "file:./node_modules/@dev.hiconic/tf.js_tf-js"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vitest": "^2.1.5"
   }
 }
